@@ -14,6 +14,12 @@ input[type="radio"]{
     display: none;
 }
 
+
+
+input[type="radio"]:checked ~ .hiddenContents{
+    display: flex;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -273,7 +279,6 @@ button[id="drawUpBtn"]{
     gap: 96px;
     align-self: stretch;
     border-radius: 10px;
-    background: #F3F3F3;
 }
 
 .checkBoxContainer{
@@ -565,7 +570,3 @@ input[type="checkbox"], #hover, #checked{
         gap: 1rem;    
     }
 }
-
-
-
-
