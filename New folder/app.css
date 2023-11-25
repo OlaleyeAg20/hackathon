@@ -411,7 +411,7 @@ div a{
 }
 
 
-input[type="checkbox"], #hover, #checked{
+input[type="checkbox"], .hover, .checked{
     display: none;
 }
 
@@ -570,3 +570,7 @@ input[type="checkbox"], #hover, #checked{
         gap: 1rem;    
     }
 }
+
+
+
+
