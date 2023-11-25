@@ -14,25 +14,26 @@ input[type="radio"]{
     display: none;
 }
 
-
-
-input[type="radio"]:checked ~ .hiddenContents{
-    display: flex;
-}
-
-*{
+*,*::after,*::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Inter, sans-serif;
 }
-button{
-    cursor: pointer;
-}
 
 body{
     background: var(--white);
     color: var(--black);
+    overflow: hidden;
+}
+
+input[type="radio"]:checked ~ .hiddenContents{
+    display: flex;
+}
+
+
+button{
+    cursor: pointer;
 }
 
 header{
@@ -133,7 +134,8 @@ input[name='search']:focus{
     flex-direction: column;
     gap: 1rem;
     margin: 2rem auto;
-    
+    position: relative;
+    padding-top: 72px;
 }
 
 .announcement{
@@ -145,7 +147,10 @@ input[name='search']:focus{
     color: var(--fontWhite);
     background: var(--black);
     padding: .75rem 1rem;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     padding-inline-end: 2rem;
 }
 .announcement > p{
@@ -282,7 +287,7 @@ button[id="drawUpBtn"]{
 }
 
 .checkBoxContainer{
-    display: block;
+    display: none;
 }
 
 .checkboxInfo{
