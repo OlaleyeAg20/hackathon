@@ -19,9 +19,9 @@
             <input type="text" placeholder="Search" name="search" id="searchInput">
         </label>
 
-        <div class="profileCard">
+        <div class="profileCard" id="profileCard">
             <button id="notificationBtn"><img style="width: 20px;" src="images/notificstion.svg" alt="notification" /></button>
-            <button class="profileInfo">
+            <button class="profileInfo" aria-haspopup="true" aria-expanded="false" aria-controls="storeInfo">
                 <span class="storeName">Davii Collections</span>
                 <div class="profileDp">DC</div>
             </button>
@@ -65,7 +65,7 @@
                         <label class="checked" for="checkOne"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
-                            <input type="radio" name="hideShow" id="hideShow1" checked>
+                            <input type="radio" value="1" name="hideShow" id="hideShow1" checked>
                             <p class="checkBoxTag"><label for="hideShow1">Customize your online store</label></p>
                             <div class="hiddenContents">
                                 <div class="textBoxDiv">
@@ -89,7 +89,7 @@
                         <label class="checked" for="checkTwo"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
-                            <input type="radio" name="hideShow" id="hideShow2">
+                            <input type="radio" value="2" name="hideShow" id="hideShow2">
                             <p class="checkBoxTag"><label for="hideShow2">Add your first product</label></p>
                             <div class="hiddenContents">
                                 <div class="textBoxDiv">
@@ -116,7 +116,7 @@
                         <label class="checked" for="checkThree"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
-                            <input type="radio" name="hideShow" id="hideShow3">
+                            <input type="radio" value="3" name="hideShow" id="hideShow3">
                             <p class="checkBoxTag"><label for="hideShow3">Add a custom domain</label></p>
                             <div class="hiddenContents">
                                 <div class="textBoxDiv">
@@ -141,7 +141,7 @@
                         <label class="checked" for="checkFour"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
-                            <input type="radio" name="hideShow" id="hideShow4">
+                            <input type="radio" value="4" name="hideShow" id="hideShow4">
                             <p class="checkBoxTag"><label for="hideShow4">Name your store</label></p>
                             <div class="hiddenContents">
                                 <div class="textBoxDiv">
@@ -165,7 +165,7 @@
                         <label class="checked" for="checkFive"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
-                            <input type="radio" name="hideShow" id="hideShow5">
+                            <input type="radio" value="5" name="hideShow" id="hideShow5">
                             <p class="checkBoxTag"><label for="hideShow5"> Set up a payment provider</label></p>
                             <div class="hiddenContents">
                                 <div class="textBoxDiv">
@@ -187,17 +187,18 @@
     </div>
 
 
-    <div class="storeInfo">
+    <div class="storeInfo" id="storeInfo" aria-labelledby="profileCard" role="menu">
         <div class="storeInfoHeader">
             <div style="display: flex; justify-content: center; align-items: center; gap: .5rem;">
                 <span class="profileDp">DC</span>
                 <span>Davii Collections</span>
             </div>
             
+            <img src="images/tick.svg" alt="check">
 
         </div>
         <div class="allStore"><a href="#"><img src="https://crushingit.tech/hackathon-assets/icon-store.svg" alt=""> All stores</a></div>
-        <hr>
+
         <div class="navDiv">
             <a href="#">Help Center</a>
             <a href="#">Changelog</a>
@@ -205,7 +206,6 @@
             <a href="#">Hire a Shopify Partner</a>
             <a href="#">Keyboard shortcuts</a>
         </div>
-        <hr>
 
         <div class="contactInfo">
             <h3 class="userName">David Micheal</h3>
