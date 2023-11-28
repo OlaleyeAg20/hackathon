@@ -1,599 +1,237 @@
-:root{
-    --black: #1A1A1A;
-    --fontBlack: #323232;
-    --grey: #B5B5B5;
-    --white: #F1F1F1;
-    --fontWhite: #E3E3E3;
-    --green: #36FBA1;
-    --searchBarBg: #303030;
-    --divWhite: #DBDBDB;
-    --lightblack: #616161;
-}
 
-input[type="radio"]{
-    display: none;
-}
-
-*,*::after,*::before{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Inter, sans-serif;
-}
-
-body{
-    background: var(--white);
-    color: var(--black);
-}
-
-input[type="radio"]:checked ~ .hiddenContents{
-    display: flex;
-}
-
-
-button{
-    cursor: pointer;
-}
-
-header{
-    background: var(--black);
-    color: var(--grey);
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-}
-
-.profileCard{
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-    font-size: .75rem;
-}
-
-.profileInfo{
-    display: flex;
-    justify-content: space-between;
-    border-radius: .5rem;
-    align-items: center;
-    gap: .5rem;
-    background: var(--fontBlack);
-    padding: .2rem .2rem .15rem .5rem;
-    border: none;
-    color: var(--divWhite);
-}
-
-.profileDp{
-    background: var(--green);
-    color: rgba(0, 0, 0, 0.40);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    margin-left: .5rem;
-    width: 28px;
-    aspect-ratio: 1/1;
-}
-
-#notificationBtn{
-    background: var(--fontBlack);
-    border-radius: .5rem;
-    border: none;
-    padding: .5rem;
-}
-
-
-.searchBar{
-    display: flex;
-    width: 480px;
-    height: 32px;
-    padding: 8px;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    border: 1px solid #616161;
-    background: #303030;
-}
-
-.searchBar:hover, .searchBarFocus{
-    border: .5px solid;
-}
-
-input[name='search']{
-    background: transparent;
-    width: 90%;
-    font-size: 13px;
-    line-height: 140%;
-    border: none;
-    padding: 0;
-    padding-left: 2px;
-    color: var(--white);
-}
-
-input[name='search']::placeholder{
-    color: var(--grey)
-}
-
-.mobile{
-    display: none;
-}
-
-input[name='search']:focus{
-    border: none;
-    outline: none;
-}
-
-.searchBar:has(> input[name='search']:focus){
-    outline: 1px solid;
-}
-
-.mainContent{
-    width: min(100%, 800px);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 2rem auto;
-    position: relative;
-    padding-top: 100px;
-}
-
-.announcement{
-    display: flex;
-    justify-content: space-between;
-    border: none;
-    border-radius: .5rem;
-    align-items: center;
-    color: var(--fontWhite);
-    background: var(--black);
-    padding: .75rem 1rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding-inline-end: 2rem;
-}
-.announcement > p{
-    font-size: 13px;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 140%;
-}
-
-.cancelBtn{
-    background: none;
-    border: none;
-    position: absolute;
-    right: 10px;
-    top: 13px;
-    bottom: 13px;
-}
-
-.actionBtn{
-    border: none;
-    background: #FFF;
-    color: var(--fontBlack);
-    font-size: .75rem;
-    font-style: normal;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 6px;
-    margin-right: 4px;
-}
-
-.mainContent > div{
-    width: 100%;
-    margin-inline: auto;
-}
-.setupGuide{
-    padding: .5rem;
-    background: #FFF;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    font-size: 12px;
-    line-height: 20px;
-}
-
-.setupGuideContainer{
-    display: flex;
-    width: 800px;
-    position: relative;
-    padding: .5rem;
-    flex-direction: column;
-    gap: 16px;
-    border-radius: 18px;
-    border: 1px solid var(--stroke-s-50, #DBDBDB);
-    background: var(--White, #FFF);
-    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
-}
-
-
-/* .setupGuide > p, .setupGuide > h3{
-    margin: 10px;
-} */
-
-.guageParagraph{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-}
-
-.guageContainer{
-    background: #FFF;
-    width: 72px;
-    border-radius: 5px;
-    overflow: hidden;
-    background: var(--fontWhite);
-}
-
-.guageContainer, .guage{
-    height: 4px;
-    display: inline-block;
-    padding: 0;
-}
-
-.guage{
-    background: #333;
-    width: 30%;
-}
-
-button[id="dropDownBtn"], button[id="drawUpBtn"]{
-    border: none;
-    background: none;
-    width: 20px;
-    aspect-ratio: 1/1;
-    position: absolute;
-    top: 16px;
-    right: 16px;
-}
-
-button[id="drawUpBtn"]{
-    display: none;
-}
-
-.formInfo{
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    flex: 1 0 0;
-    
-}
-
-.check{
-    width: 24px;
-    height: 24px;
-}
-
-.formInfo p{
-    color: var(--font-dark, #303030);
-    font-family: Inter;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%;
-    display: flex;
-}
-
-.checkboxes{
-    display: flex;
-    padding: 8px 8px 12px 8px;
-    align-items: center;
-    gap: 96px;
-    align-self: stretch;
-    border-radius: 10px;
-}
-
-.checkBoxContainer{
-    display: none;
-}
-
-.checkboxInfo{
-    display: flex;
-    padding: 2px 0px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    flex: 1 0 0;
-}
-
-.checkboxTag{
-    color: #303030;
-    font-family: Inter;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%; /* 18.2px */
-}
-
-.icons{
-    width: 20px;
-}
-
-.secondP{
-    color: #616161!important;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%; /* 18.2px */
-    align-self: stretch;
-}
-.textBoxDiv{
-    line-height: 140%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-div a{
-    color: var(--states-focused, #005BD3);
-    font-family: Inter;
-    font-size: 14px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.darkBtn{
-    display: inline-flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    border-radius: 6px;
-    color: #F6F3F6;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%; /* 15.6px */
-    border-top: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.20));
-    border-right: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.20));
-    border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.20));
-    background: #404040;
-    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
-}
-
-.darkBtn:hover{
-    background: #2A2A2A;
-    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
-}
-
-.darkBtn:active{
-    background: #2B2B2B;
-    box-shadow: 0px 0px 0px 1.5px #333, 0px 3px 0px 0px #000 inset;
-}
-
-.darkBtn:focus, .lightBtn:focus{
-    box-shadow: 0px 0px 0px 5px #005BD3, 0px 0px 0px 3px #FFF, 0px 0px 0px 1.5px #333;
-}
-
-.lightBtn{
-    display: inline-flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    border-radius: 6px;
-    border: none;
-    background: none;
-}
-
-
-.lightBtn:hover{
-    border-radius: 8px;
-    background: #e6e6e6;
-}
-
-.lightBtn:active{
-    background: var(--states-pressed, #F0F0F0);
-}
-
-.customize-store{
-    background: url(https://crushingit.tech/hackathon-assets/customise-store.png), 50% / cover no-repeat;
-}
-
-.customize-domain{
-    background: url(https://crushingit.tech/hackathon-assets/website.png), 50% / cover no-repeat;
-}
-
-.product{
-    background: url(https://crushingit.tech/hackathon-assets/product.png), 50% / cover no-repeat;
-}
-
-.name-store{
-    background: url(https://crushingit.tech/hackathon-assets/name-store.png), 50% / cover no-repeat;
-}
-
-.setupPayment{
-    background: url(https://crushingit.tech/hackathon-assets/payment.png), 50% / cover no-repeat;
-}
-
-.imgDivs{
-    height: 120px;
-    width: 20%;
-    flex-shrink: 0;
-}
-
-
-input[type="checkbox"], .hover, .checked{
-    display: none;
-}
-.hover{
-    animation: rotate 1s infinite;
-}
-
-.hiddenContents{
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    gap: 5rem;
-}
-
-
-
-.storeInfo, .notificationDisplay{
-    display: none;
-    width: 320px;
-    padding: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    border-radius: 14px;
-    background: var(--White, #FFF);
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
-    position: absolute;
-    top: 64;
-    right: 16;
-}
-
-.alertDescription{
-    color: var(--lightblack);
-    font-family: Inter;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%; /* 18.2px */
-    padding: 1rem;
-    background: #F1F1F1;
-}
-
-.notificationDisplay{
-    padding: 1rem;
-    width: min(80%, 380px);
-}
-
-.storeInfo a{
-    text-decoration: none;
-    color: var(--searchBarBg);
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
-}
-
-
-
-.storeInfoHeader{
-    display: flex;
-    padding: 4px 12px 4px 8px;
-    justify-content: space-between;
-    margin: 6px;
-    align-items: center;
-    align-self: stretch;
-    border-radius: 8px;
-    background: var(--states-hover, #F1F1F1);
-}
-
-.allStore{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    align-self: stretch;
-    border-radius: .5rem;
-    padding: .5rem;
-}
-
-.navDiv{
-    display: flex;
-    flex-direction: column;
-    gap: .25rem;
-    width: 100%;
-}
-
-.navDiv a, .footerLinks a{
-    display: flex;
-    flex-direction: column;
-    padding: 6px;
-    align-items: flex-start;
-    margin: .25rem;
-    gap: .5rem;
-    align-self: stretch;
-}
-
-.contactInfo{
-    display: flex;
-    padding: 8px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    align-self: stretch;
-    border-radius: .5rem;
-}
-
-.small{
-    background: none;
-    border: none;
-}
-
-.contactInfo p{
-    color: #616161;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%; /* 15.6px */
-}
-
-a:focus{
-    border: 2px solid blue;
-}
- 
-.userName{
-    color: var(--font-dark, #303030);
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%; /* 18.2px */
-}
-
-.alertDiv{
-    display: flex;
-    justify-content: space-between;
-}
-
-@media (max-width: 720px) {
-    .mobile{
-        display: inline-block;
-    }
-    .desktop{
-        display: none!important;
-    }
-    .storeName{
-        display: none;
-    }
-    
-    .mainContent{
-        padding-top: 100px;
-        margin-top: .5rem;
-    }
-
-    label[for="searchInput"]{
-        width: 55%;
-    }
-
-    .announcement, .setUpGuideContainer{
-        border-radius: 0;
-    }
-    .checkboxes, .profileInfo, #notificationBtn{
-        background: none!important;
-        padding: .2rem;
-    }
-    .imgDivs{
-        display: none;
-    }
-}
-    
-
-@keyframes rotate {
-    from{
-       transform: rotateZ(0deg);
-    }
-    to{
-        transform: rotateZ(360deg);
-    }
-}
-
-.announcement{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;    
-}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/shopify.svg" type="image/x-icon">
+    <title>Shopify Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <header>
+        <a class="desktop" href="#"><img src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg" alt="shopify Logo" /></a>
+        <a class="mobile" href="#"><img src="https://crushingit.tech/hackathon-assets/shopify-icon.svg" alt="shopify Logo" /></a>
+        <label for="searchInput" class="searchBar">
+            <img src="search.svg" style="width: 20px;" alt="search icon" />
+            <input type="text" placeholder="Search" name="search" id="searchInput">
+        </label>
+
+        <div class="profileCard" id="profileCard">
+            <button id="notificationBtn"><img style="width: 20px;" src="images/notificstion.svg" alt="notification" /></button>
+            <button class="profileInfo" aria-haspopup="true" aria-expanded="false" aria-controls="storeInfo">
+                <span class="storeName">Davii Collections</span>
+                <div class="profileDp">DC</div>
+            </button>
+        </div>
+    </header>
+    <!--End Of Header Section-->
+
+    <div class="mainContent">
+        <div class="announcement">
+            <p>Extend your trial for $1/month for 3 months on select plans.</p>
+            <div class="callToAction">
+                <button class="actionBtn">Select a plan</button>
+                <button class="cancelBtn"><img style="width: 20px;" src="images/close.svg" alt="close"></button>
+            </div>
+        </div>
+        <!--End of the black announcement bar-->
+
+        <div class="setUpGuideContainer">
+            <div class="setUpGuide">
+                    <div>
+                        <h3 class="heading">Setup guide</h3>
+                        <p>Use this personalized guide to get your store up and running.</p>
+                    </div>
+                    <p class="guageParagraph"><span id="progressGuage"></span> 
+                        <span class="guageContainer">
+                            <span class="guage"></span>
+                        </span>
+                        <button id="dropDownBtn"><img src="https://crushingit.tech/hackathon-assets/icon-arrow-down.svg" alt=""></button>
+                        <button id="drawUpBtn"><img src="https://crushingit.tech/hackathon-assets/icon-arrow-up.svg" alt=""></button>
+                    </p>
+            </div>
+
+
+            <div class="checkboxContainer">
+                <!--Template-->
+                <div id="first" class="checkboxes">
+                    <div class="formInfo">
+                        <input type="checkbox" value="1" name="setUpGuide" id="checkOne">
+                        <label class="unchecked" for="checkOne"><img class="check" src="images/unchecked.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="checked" for="checkOne"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
+
+                        <div class="checkboxInfo">
+                            <input type="radio" value="1" name="hideShow" id="hideShow1" checked>
+                            <p class="checkBoxTag"><label for="hideShow1">Customize your online store</label></p>
+                            <div class="hiddenContents">
+                                <div class="textBoxDiv">
+                                    <p class="secondP">Choose a theme and add your logo, colors, and images
+                                     to reflect your brand.
+                                    </p>
+                                    <a href="#">Learn more</a>
+                                    <button class="darkBtn">Customize theme</button>
+                                </div>
+                                <div class="customize-store imgDivs"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkboxes">
+                    <div class="formInfo">
+                        <input type="checkbox" value="2" name="setUpGuide" id="checkTwo">
+                        <label class="unchecked" for="checkTwo"><img class="check" src="images/unchecked.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="checked" for="checkTwo"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
+
+                        <div class="checkboxInfo">
+                            <input type="radio" value="2" name="hideShow" id="hideShow2">
+                            <p class="checkBoxTag"><label for="hideShow2">Add your first product</label></p>
+                            <div class="hiddenContents">
+                                <div class="textBoxDiv">
+                                    <p class="secondP">Write a description, add photos,
+                                         and set pricing for the products you plan to sell.
+                                    </p>
+                                    <a href="#">Learn more</a>
+                                    <div>
+                                        <button class="darkBtn">Add product</button>
+                                        <button class="lightBtn">Import product</button>
+                                    </div>
+                                </div>
+                                <div class="product imgDivs"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkboxes">
+                    <div class="formInfo">
+                        <input type="checkbox" value="3" name="setUpGuide" id="checkThree">
+                        <label class="unchecked" for="checkThree"><img class="check" src="images/unchecked.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="checked" for="checkThree"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
+
+                        <div class="checkboxInfo">
+                            <input type="radio" value="3" name="hideShow" id="hideShow3">
+                            <p class="checkBoxTag"><label for="hideShow3">Add a custom domain</label></p>
+                            <div class="hiddenContents">
+                                <div class="textBoxDiv">
+                                    <p class="secondP">Your current domain is 222219.myshopify.com
+                                         but you can add a custom domain to help
+                                          customers find your online store.
+                                    </p>
+                                    <a href="#">Learn more</a>
+                                    <button class="darkBtn">Add domain</button>
+                                </div>
+                                <div class="customize-domain imgDivs"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkboxes">
+                    <div class="formInfo">
+                        <input type="checkbox" value="4" name="setUpGuide" id="checkFour">
+                        <label class="unchecked" for="checkFour"><img class="check" src="images/unchecked.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="checked" for="checkFour"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
+
+                        <div class="checkboxInfo">
+                            <input type="radio" value="4" name="hideShow" id="hideShow4">
+                            <p class="checkBoxTag"><label for="hideShow4">Name your store</label></p>
+                            <div class="hiddenContents">
+                                <div class="textBoxDiv">
+                                    <p class="secondP">Your temporary store name is currently Davii collections.
+                                         The store name appears in your admin and your online store.
+                                    </p>
+                                    <a href="#">Learn more</a>
+                                    <button class="darkBtn">Name store</button>
+                                </div>
+                                <div class="name-store imgDivs"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkboxes">
+                    <div class="formInfo">
+                        <input type="checkbox" value="5" name="setUpGuide" id="checkFive">
+                        <label class="unchecked" for="checkFive"><img class="check" src="images/unchecked.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="checked" for="checkFive"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
+
+                        <div class="checkboxInfo">
+                            <input type="radio" value="5" name="hideShow" id="hideShow5">
+                            <p class="checkBoxTag"><label for="hideShow5"> Set up a payment provider</label></p>
+                            <div class="hiddenContents">
+                                <div class="textBoxDiv">
+                                    <p class="secondP">Choose a payment provider to start accepting payments.
+                                         You’ll need to create an account with the payment provider
+                                         and set it up with your Shopify store.
+                                    </p>
+                                    <a href="#">Learn more</a>
+                                    <button class="darkBtn">Set up payment</button>
+                                </div>
+                                <div class="setupPayment imgDivs"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="storeInfo" id="storeInfo" aria-labelledby="profileCard">
+        <div class="storeInfoHeader">
+            <div style="display: flex; justify-content: center; align-items: center; gap: .5rem;">
+                <span class="profileDp">DC</span>
+                <span>Davii Collections</span>
+            </div>
+            
+            <img src="images/tick.svg" alt="check">
+
+        </div>
+        <div class="allStore"><a role="menuitem" href="#"><img src="https://crushingit.tech/hackathon-assets/icon-store.svg" alt=""> All stores</a></div>
+<hr>
+        <div class="navDiv">
+            <a role="menuitem" href="#">Help Center</a>
+            <a role="menuitem" href="#">Changelog</a>
+            <a role="menuitem" href="#">Community forums</a>
+            <a role="menuitem" href="#">Hire a Shopify Partner</a>
+            <a role="menuitem" href="#">Keyboard shortcuts</a>
+        </div>
+        <hr>
+        <div class="contactInfo">
+            <h3 class="userName">David Micheal</h3>
+            <p>davidmicheal@gmail.com</p>
+        </div>
+
+        <div class="footerLinks">
+            <a role="menuitem" href="#">Manage Account</a>
+            <a role="menuitem" href="#">Log out</a>
+        </div>
+    </div>
+
+    <!--Notification Display-->
+    <div class="notificationDisplay">
+        <div class="alertDiv">
+            <p>Alerts</p>
+            <div class="alertIcon">
+                <button class="filterBtn small"><img src="images/icon-filter.svg" class="icons" alt=""></button>
+                <button class="checkBtn small"><img src="images/check.svg" class="icons" alt=""></button>
+            </div>
+        </div>
+        <p class="alertDescription">
+            Alerts about your store and account will show here
+        </p>
+    </div>
+
+  <script src="./app.js"></script>
+  </body>
+</html>
