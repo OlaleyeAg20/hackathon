@@ -57,11 +57,11 @@
 
             <div class="checkboxContainer">
                 <!--Template-->
-                <div class="checkboxes">
+                <div id="first" class="checkboxes">
                     <div class="formInfo">
                         <input type="checkbox" value="1" name="setUpGuide" id="checkOne">
                         <label class="unchecked" for="checkOne"><img class="check" src="images/unchecked.svg" alt=""></label>
-                        <label class="hover" for="checkOne"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
                         <label class="checked" for="checkOne"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
@@ -85,7 +85,7 @@
                     <div class="formInfo">
                         <input type="checkbox" value="2" name="setUpGuide" id="checkTwo">
                         <label class="unchecked" for="checkTwo"><img class="check" src="images/unchecked.svg" alt=""></label>
-                        <label class="hover" for="checkTwo"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
                         <label class="checked" for="checkTwo"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
@@ -112,7 +112,7 @@
                     <div class="formInfo">
                         <input type="checkbox" value="3" name="setUpGuide" id="checkThree">
                         <label class="unchecked" for="checkThree"><img class="check" src="images/unchecked.svg" alt=""></label>
-                        <label class="hover" for="checkThree"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
                         <label class="checked" for="checkThree"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
@@ -137,7 +137,7 @@
                     <div class="formInfo">
                         <input type="checkbox" value="4" name="setUpGuide" id="checkFour">
                         <label class="unchecked" for="checkFour"><img class="check" src="images/unchecked.svg" alt=""></label>
-                        <label class="hover" for="checkFour"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
                         <label class="checked" for="checkFour"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
@@ -161,7 +161,7 @@
                     <div class="formInfo">
                         <input type="checkbox" value="5" name="setUpGuide" id="checkFive">
                         <label class="unchecked" for="checkFive"><img class="check" src="images/unchecked.svg" alt=""></label>
-                        <label class="hover" for="checkFive"><img class="check" src="hover.svg" alt=""></label>
+                        <label class="hover"><img class="check" src="hover.svg" alt=""></label>
                         <label class="checked" for="checkFive"><img class="check" src="https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg" alt=""></label>
 
                         <div class="checkboxInfo">
@@ -187,7 +187,7 @@
     </div>
 
 
-    <div class="storeInfo" id="storeInfo" aria-labelledby="profileCard" role="menu">
+    <div class="storeInfo" id="storeInfo" aria-labelledby="profileCard">
         <div class="storeInfoHeader">
             <div style="display: flex; justify-content: center; align-items: center; gap: .5rem;">
                 <span class="profileDp">DC</span>
@@ -197,14 +197,14 @@
             <img src="images/tick.svg" alt="check">
 
         </div>
-        <div class="allStore"><a href="#"><img src="https://crushingit.tech/hackathon-assets/icon-store.svg" alt=""> All stores</a></div>
+        <div class="allStore"><a role="menuitem" href="#"><img src="https://crushingit.tech/hackathon-assets/icon-store.svg" alt=""> All stores</a></div>
 <hr>
         <div class="navDiv">
-            <a href="#">Help Center</a>
-            <a href="#">Changelog</a>
-            <a href="#">Community forums</a>
-            <a href="#">Hire a Shopify Partner</a>
-            <a href="#">Keyboard shortcuts</a>
+            <a role="menuitem" href="#">Help Center</a>
+            <a role="menuitem" href="#">Changelog</a>
+            <a role="menuitem" href="#">Community forums</a>
+            <a role="menuitem" href="#">Hire a Shopify Partner</a>
+            <a role="menuitem" href="#">Keyboard shortcuts</a>
         </div>
         <hr>
         <div class="contactInfo">
@@ -213,8 +213,8 @@
         </div>
 
         <div class="footerLinks">
-            <a href="#">Manage Account</a>
-            <a href="#">Log out</a>
+            <a role="menuitem" href="#">Manage Account</a>
+            <a role="menuitem" href="#">Log out</a>
         </div>
     </div>
 
