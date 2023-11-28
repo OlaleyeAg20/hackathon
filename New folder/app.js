@@ -9,6 +9,8 @@ const dropDown = document.querySelector('#dropDownBtn')
 const progressGuage = document.getElementById('progressGuage')
 const guage = document.querySelector('.guage')
 const checkboxContainer = document.querySelector('.checkboxContainer')
+const checkBoxContainers = document.querySelectorAll('.checkboxes')
+
 
 
 dropDown.addEventListener('click', function(){
@@ -33,35 +35,52 @@ const checkBtns = document.querySelectorAll('input[type="checkbox"]')
 console.log(checkBtns)
 
 const checkedIcon = document.querySelectorAll('.checked')
+const hoverIcon = document.querySelectorAll('.hover')
 const uncheckedIcon = document.querySelectorAll('.unchecked')
 const checkBoxes = document.querySelectorAll('.checkboxes')
-const radioBtn = document.querySelectorAll('input[type="radio"]')
+let radioBtn = document.querySelectorAll('input[type="radio"]')
 
 checkBtns.forEach((e) => {
-    e.addEventListener('change', function(){
+    e.addEventListener('change', function(e){
         if(this.checked){
             completedStep++
-            checkedIcon[this.value - 1].style.display = "inline"
+        let disp = checkedIcon[this.value - 1]
+        let disp2 = hoverIcon[this.value - 1]
+            setTimeout(function(){
+                disp.style.display = "inline"
+                disp2.style.display = "none"
+            }, 1000)
+            hoverIcon[this.value - 1].style.display = "inline"            
             uncheckedIcon[this.value - 1].style.display = "none"
+            radioBtn[this.value - 1].checked = true
+            checkBoxContainers.forEach((e) => {
+                e.style.background = '#fff'
+            })
+            checkBoxContainers[this.value - 1].style.background = '#f6f6f6'
         }else{
             completedStep--
             checkedIcon[this.value - 1].style.display = "none"
+            hoverIcon[this.value - 1].style.display = "none"
             uncheckedIcon[this.value - 1].style.display = "inline"
+            
         }
         progressGuage.textContent = `${completedStep} / ${checkBtns.length} completed`
         guage.style.width = (completedStep/checkBtns.length * 100) + "%"
     })
 })
+checkBoxes[0]. style.background = '#f3f3f3'
 
-radioBtn.forEach((e) => {
+ radioBtn.forEach((e) => {
     e.addEventListener('change', function(){
         if(this.checked){
+            
+            checkBoxes.forEach((e) => {
+               e.style.background = '#fff'
+            })
             checkBoxes[this.value - 1].style.background = "#F3F3F3"
-        }else{
-            checkBoxes[this.value - 1].style.background = "#fff"
         }
     })
-})
+}) 
 
 
 guage.style.width = (completedStep/checkBtns.length * 100) + "%"
@@ -93,7 +112,28 @@ function hideShowNotification(){
     profileInfoBtn.style.background = '#303030'
 }
 
+let storeInfo = document.getElementById('storeInfo')
+let menus = storeInfo.querySelectorAll('a[role="menuitem"]')
+
 function hideShowStoreInfo(){
+    const isExpanded = profileInfoBtn.attributes["aria-expanded"].value === "true"
+
+console.log(isExpanded)
+
+    
+    console.log(menus)
+
+
+    if(isExpanded){
+        profileInfoBtn.ariaExpanded = "false"
+    } else {
+        profileInfoBtn.ariaExpanded = "true"
+        menus[0].focus()
+    }
+
+    
+    
+
     isClicked = false
     isClicked1 = !isClicked1
     if(isClicked1 === true){
@@ -105,7 +145,6 @@ function hideShowStoreInfo(){
     }
     notificationDisplay.style.display = 'none'
     notificationBtn.style.background = '#303030'
-    
 }
 
 
