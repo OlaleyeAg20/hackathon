@@ -24,7 +24,6 @@ input[type="radio"]{
 body{
     background: var(--white);
     color: var(--black);
-    overflow: hidden;
 }
 
 input[type="radio"]:checked ~ .hiddenContents{
@@ -135,7 +134,7 @@ input[name='search']:focus{
     gap: 1rem;
     margin: 2rem auto;
     position: relative;
-    padding-top: 72px;
+    padding-top: 100px;
 }
 
 .announcement{
@@ -419,6 +418,9 @@ div a{
 input[type="checkbox"], .hover, .checked{
     display: none;
 }
+.hover{
+    animation: rotate 1s infinite;
+}
 
 .hiddenContents{
     display: none;
@@ -530,6 +532,10 @@ input[type="checkbox"], .hover, .checked{
     font-weight: 400;
     line-height: 130%; /* 15.6px */
 }
+
+a:focus{
+    border: 2px solid blue;
+}
  
 .userName{
     color: var(--font-dark, #303030);
@@ -554,6 +560,11 @@ input[type="checkbox"], .hover, .checked{
     .storeName{
         display: none;
     }
+    
+    .mainContent{
+        padding-top: 100px;
+        margin-top: .5rem;
+    }
 
     label[for="searchInput"]{
         width: 55%;
@@ -561,21 +572,28 @@ input[type="checkbox"], .hover, .checked{
 
     .announcement, .setUpGuideContainer{
         border-radius: 0;
-    }.checkboxes
-    .profileInfo, #notificationBtn{
+    }
+    .checkboxes, .profileInfo, #notificationBtn{
         background: none!important;
         padding: .2rem;
     }
     .imgDivs{
         display: none;
     }
-    .announcement{
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;    
+}
+    
+
+@keyframes rotate {
+    from{
+       transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
     }
 }
 
-
-
-
+.announcement{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;    
+}
